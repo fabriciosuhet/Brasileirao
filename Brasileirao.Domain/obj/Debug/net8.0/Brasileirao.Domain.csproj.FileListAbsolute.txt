@@ -1,0 +1,11 @@
+D:\Projetos\Brasileirao\Brasileirao.Domain\bin\Debug\net8.0\Brasileirao.Domain.deps.json
+D:\Projetos\Brasileirao\Brasileirao.Domain\bin\Debug\net8.0\Brasileirao.Domain.dll
+D:\Projetos\Brasileirao\Brasileirao.Domain\bin\Debug\net8.0\Brasileirao.Domain.pdb
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.AssemblyInfoInputs.cache
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.AssemblyInfo.cs
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.csproj.CoreCompileInputs.cache
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.dll
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\refint\Brasileirao.Domain.dll
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.pdb
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\ref\Brasileirao.Domain.dll

@@ -1,0 +1,15 @@
+D:\Projetos\Brasileirao\Brasileirao.Application\bin\Debug\net8.0\Brasileirao.Application.deps.json
+D:\Projetos\Brasileirao\Brasileirao.Application\bin\Debug\net8.0\Brasileirao.Application.dll
+D:\Projetos\Brasileirao\Brasileirao.Application\bin\Debug\net8.0\Brasileirao.Application.pdb
+D:\Projetos\Brasileirao\Brasileirao.Application\bin\Debug\net8.0\Brasileirao.Domain.dll
+D:\Projetos\Brasileirao\Brasileirao.Application\bin\Debug\net8.0\Brasileirao.Domain.pdb
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.csproj.AssemblyReference.cache
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.AssemblyInfoInputs.cache
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.AssemblyInfo.cs
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.csproj.CoreCompileInputs.cache
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasilei.164FEFCE.Up2Date
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.dll
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\refint\Brasileirao.Application.dll
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.pdb
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\ref\Brasileirao.Application.dll
