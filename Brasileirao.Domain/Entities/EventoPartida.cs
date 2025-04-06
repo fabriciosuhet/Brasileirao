@@ -16,6 +16,8 @@ public class EventoPartida : BaseEntity
     public int Minuto { get; private set; }
     
     public TipoEventoPartidaEnum TipoEvento { get; private set; } = TipoEventoPartidaEnum.InicioDoJogo;
+    
+    protected EventoPartida(){}
 
     public EventoPartida(Guid partidaId, Guid? jogadorId, Guid timeId, int minuto)
     {
@@ -24,4 +26,15 @@ public class EventoPartida : BaseEntity
         TimeId = timeId;
         Minuto = minuto;
     }
+
+    public EventoPartida(Guid? jogadorId, Guid timeId, int minuto, TipoEventoPartidaEnum tipoEvento)
+    {
+        JogadorId = jogadorId;
+        TimeId = timeId;
+        Minuto = minuto;
+        TipoEvento = tipoEvento;
+    }
+
+    public void SetPartidaId(Guid partidaId) => PartidaId = partidaId;
+    
 }

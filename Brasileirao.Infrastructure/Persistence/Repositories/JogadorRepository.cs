@@ -25,6 +25,8 @@ public class JogadorRepository : IJogadorRepository
             .Include(j => j.Time)
             .Include(j => j.Titulos)
                 .ThenInclude(jt => jt.Titulo)
+            .Include(j => j.Gols)
+            .Include(j => j.Eventos)
             .FirstOrDefaultAsync(j => j.Id.Equals(jogadorId));
     }
 }

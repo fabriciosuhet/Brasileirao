@@ -17,6 +17,10 @@ public class BrasileiraoApiDbContext : DbContext
     public DbSet<JogadorTitulo> TitulosJogador { get; set; }
     public DbSet<TimeTitulo> TitulosTime { get; set; }
     public DbSet<CampeonatoTime> CampeonatosTime { get; set; }
+    public DbSet<EventoPartida> Eventos { get; set; }
+    public DbSet<RegistroDeGols> Gols { get; set; }
+    public DbSet<Partida> Partidas { get; set; }
+    
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

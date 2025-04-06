@@ -13,3 +13,4 @@ D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.App
 D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\refint\Brasileirao.Application.dll
 D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.pdb
 D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\ref\Brasileirao.Application.dll
+D:\Projetos\Brasileirao\Brasileirao.Application\obj\Debug\net8.0\Brasileirao.Application.sourcelink.json

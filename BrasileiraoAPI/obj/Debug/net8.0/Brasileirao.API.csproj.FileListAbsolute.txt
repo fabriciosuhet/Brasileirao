@@ -116,3 +116,4 @@ D:\Projetos\Brasileirao\BrasileiraoAPI\bin\Debug\net8.0\MediatR.dll
 D:\Projetos\Brasileirao\BrasileiraoAPI\bin\Debug\net8.0\MediatR.Contracts.dll
 D:\Projetos\Brasileirao\BrasileiraoAPI\bin\Debug\net8.0\Brasileirao.Application.dll
 D:\Projetos\Brasileirao\BrasileiraoAPI\bin\Debug\net8.0\Brasileirao.Application.pdb
+D:\Projetos\Brasileirao\BrasileiraoAPI\obj\Debug\net8.0\Brasileirao.API.sourcelink.json

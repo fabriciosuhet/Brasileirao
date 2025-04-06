@@ -38,7 +38,7 @@ public class TimeTituloController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] AdicionarTimeTiuloCommand command)
+    public async Task<IActionResult> Post([FromBody] AdicionarTimeTituloCommand command)
     {
         var timeTitulo = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetById), new { timeId = timeTitulo.Item1, tituloId = timeTitulo.Item2 }, command);

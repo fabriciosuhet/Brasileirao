@@ -16,6 +16,18 @@ public class JogadorConfiguration : IEntityTypeConfiguration<Jogador>
             .WithMany(t => t.Jogadores)
             .HasForeignKey(j => j.TimeId)
             .OnDelete(DeleteBehavior.Restrict);
+        
+        builder
+            .HasMany(j => j.Gols)
+            .WithOne(g => g.Jogador)
+            .HasForeignKey(g => g.JogadorId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        builder
+            .HasMany(j => j.Eventos)
+            .WithOne(ep => ep.Jogador)
+            .HasForeignKey(ep => ep.JogadorId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder
             .Property(j => j.Nome)

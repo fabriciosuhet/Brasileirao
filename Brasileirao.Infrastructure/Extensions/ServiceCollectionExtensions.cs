@@ -37,6 +37,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ITimeRepository, TimeRepository>();
         services.AddScoped<ITimeTituloRepository, TimeTituloRepository>();
         services.AddScoped<ITituloRepository, TituloRepository>();
+        services.AddScoped<IPartidaRepository, PartidaRepository>();
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         return services;
     }

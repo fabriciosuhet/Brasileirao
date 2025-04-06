@@ -9,3 +9,4 @@ D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.d
 D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\refint\Brasileirao.Domain.dll
 D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.pdb
 D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\ref\Brasileirao.Domain.dll
+D:\Projetos\Brasileirao\Brasileirao.Domain\obj\Debug\net8.0\Brasileirao.Domain.sourcelink.json

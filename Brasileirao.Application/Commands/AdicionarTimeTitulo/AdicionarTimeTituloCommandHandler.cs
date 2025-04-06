@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Brasileirao.Application.Commands.AdicionarTimeTitulo;
 
-public class AdicionarTimeTituloCommandHandler : IRequestHandler<AdicionarTimeTiuloCommand, (Guid, Guid)>
+public class AdicionarTimeTituloCommandHandler : IRequestHandler<AdicionarTimeTituloCommand, (Guid, Guid)>
 {
     private readonly ITimeTituloRepository _timeTituloRepository;
 
@@ -13,7 +13,7 @@ public class AdicionarTimeTituloCommandHandler : IRequestHandler<AdicionarTimeTi
         _timeTituloRepository = timeTituloRepository;
     }
 
-    public async Task<(Guid, Guid)> Handle(AdicionarTimeTiuloCommand request, CancellationToken cancellationToken)
+    public async Task<(Guid, Guid)> Handle(AdicionarTimeTituloCommand request, CancellationToken cancellationToken)
     {
         var timeTitulo = new TimeTitulo(request.TimeId, request.TituloId, request.Quantidade);
         await _timeTituloRepository.CreateAsync(timeTitulo);

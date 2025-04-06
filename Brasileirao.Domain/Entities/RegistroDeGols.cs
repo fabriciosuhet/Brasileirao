@@ -1,6 +1,6 @@
 ﻿namespace Brasileirao.Domain.Entities;
 
-public class Gol : BaseEntity
+public class RegistroDeGols : BaseEntity
 {
     public Guid PartidaId { get; private set; }
     public Partida Partida { get; private set; }
@@ -10,11 +10,23 @@ public class Gol : BaseEntity
     public Time Time { get; private set; }
     public int GolMinuto { get; private set; }
 
-    public Gol(Guid partidaId, Guid jogadorId, Guid timeId, int golMinuto)
+    public RegistroDeGols(Guid partidaId, Guid jogadorId, Guid timeId, int golMinuto)
     {
         PartidaId = partidaId;
         JogadorId = jogadorId;
         TimeId = timeId;
         GolMinuto = golMinuto;
+    }
+
+    public RegistroDeGols(Guid jogadorId, Guid timeId, int golMinuto)
+    {
+        JogadorId = jogadorId;
+        TimeId = timeId;
+        GolMinuto = golMinuto;
+    }
+
+    public void SetPartidaId(Guid partidaId)
+    {
+        PartidaId = partidaId;
     }
 }

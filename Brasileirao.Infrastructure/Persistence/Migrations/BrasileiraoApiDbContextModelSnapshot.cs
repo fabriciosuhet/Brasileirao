@@ -56,6 +56,38 @@ namespace Brasileirao.Infrastructure.Persistence.Migrations
                     b.ToTable("CampeonatosTime");
                 });
 
+            modelBuilder.Entity("Brasileirao.Domain.Entities.EventoPartida", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("JogadorId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("Minuto")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("PartidaId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("TimeId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("TipoEvento")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JogadorId");
+
+                    b.HasIndex("PartidaId");
+
+                    b.HasIndex("TimeId");
+
+                    b.ToTable("Eventos");
+                });
+
             modelBuilder.Entity("Brasileirao.Domain.Entities.Jogador", b =>
                 {
                     b.Property<Guid>("Id")
@@ -72,11 +104,13 @@ namespace Brasileirao.Infrastructure.Persistence.Migrations
 
                     b.Property<string>("NumeroCamisa")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(3)
+                        .HasColumnType("varchar(3)");
 
                     b.Property<string>("Posicao")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<Guid>("TimeId")
                         .HasColumnType("char(36)");
@@ -109,6 +143,70 @@ namespace Brasileirao.Infrastructure.Persistence.Migrations
                     b.ToTable("TitulosJogador");
                 });
 
+            modelBuilder.Entity("Brasileirao.Domain.Entities.Partida", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("CampeonatoId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("DataDaPartida")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("PlacarMandante")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlacarVisitante")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("TimeMandanteId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("TimeVisitanteId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CampeonatoId");
+
+                    b.HasIndex("TimeMandanteId");
+
+                    b.HasIndex("TimeVisitanteId");
+
+                    b.ToTable("Partidas");
+                });
+
+            modelBuilder.Entity("Brasileirao.Domain.Entities.RegistroDeGols", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("GolMinuto")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("JogadorId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("PartidaId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("TimeId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JogadorId");
+
+                    b.HasIndex("PartidaId");
+
+                    b.HasIndex("TimeId");
+
+                    b.ToTable("Gols");
+                });
+
             modelBuilder.Entity("Brasileirao.Domain.Entities.Time", b =>
                 {
                     b.Property<Guid>("Id")
@@ -117,11 +215,13 @@ namespace Brasileirao.Infrastructure.Persistence.Migrations
 
                     b.Property<string>("Estado")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
@@ -187,6 +287,32 @@ namespace Brasileirao.Infrastructure.Persistence.Migrations
                     b.Navigation("Time");
                 });
 
+            modelBuilder.Entity("Brasileirao.Domain.Entities.EventoPartida", b =>
+                {
+                    b.HasOne("Brasileirao.Domain.Entities.Jogador", "Jogador")
+                        .WithMany("Eventos")
+                        .HasForeignKey("JogadorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Brasileirao.Domain.Entities.Partida", "Partida")
+                        .WithMany("Eventos")
+                        .HasForeignKey("PartidaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Brasileirao.Domain.Entities.Time", "Time")
+                        .WithMany("Eventos")
+                        .HasForeignKey("TimeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Jogador");
+
+                    b.Navigation("Partida");
+
+                    b.Navigation("Time");
+                });
+
             modelBuilder.Entity("Brasileirao.Domain.Entities.Jogador", b =>
                 {
                     b.HasOne("Brasileirao.Domain.Entities.Time", "Time")
@@ -217,6 +343,60 @@ namespace Brasileirao.Infrastructure.Persistence.Migrations
                     b.Navigation("Titulo");
                 });
 
+            modelBuilder.Entity("Brasileirao.Domain.Entities.Partida", b =>
+                {
+                    b.HasOne("Brasileirao.Domain.Entities.Campeonato", "Campeonato")
+                        .WithMany("Partidas")
+                        .HasForeignKey("CampeonatoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Brasileirao.Domain.Entities.Time", "TimeMandante")
+                        .WithMany("PartidasComoMandante")
+                        .HasForeignKey("TimeMandanteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Brasileirao.Domain.Entities.Time", "TimeVisitante")
+                        .WithMany("PartidasComoVisitante")
+                        .HasForeignKey("TimeVisitanteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Campeonato");
+
+                    b.Navigation("TimeMandante");
+
+                    b.Navigation("TimeVisitante");
+                });
+
+            modelBuilder.Entity("Brasileirao.Domain.Entities.RegistroDeGols", b =>
+                {
+                    b.HasOne("Brasileirao.Domain.Entities.Jogador", "Jogador")
+                        .WithMany("Gols")
+                        .HasForeignKey("JogadorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Brasileirao.Domain.Entities.Partida", "Partida")
+                        .WithMany("Gols")
+                        .HasForeignKey("PartidaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Brasileirao.Domain.Entities.Time", "Time")
+                        .WithMany("GolsMarcados")
+                        .HasForeignKey("TimeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Jogador");
+
+                    b.Navigation("Partida");
+
+                    b.Navigation("Time");
+                });
+
             modelBuilder.Entity("Brasileirao.Domain.Entities.TimeTitulo", b =>
                 {
                     b.HasOne("Brasileirao.Domain.Entities.Time", "Time")
@@ -239,18 +419,39 @@ namespace Brasileirao.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("Brasileirao.Domain.Entities.Campeonato", b =>
                 {
                     b.Navigation("CampeonatoTimes");
+
+                    b.Navigation("Partidas");
                 });
 
             modelBuilder.Entity("Brasileirao.Domain.Entities.Jogador", b =>
                 {
+                    b.Navigation("Eventos");
+
+                    b.Navigation("Gols");
+
                     b.Navigation("Titulos");
+                });
+
+            modelBuilder.Entity("Brasileirao.Domain.Entities.Partida", b =>
+                {
+                    b.Navigation("Eventos");
+
+                    b.Navigation("Gols");
                 });
 
             modelBuilder.Entity("Brasileirao.Domain.Entities.Time", b =>
                 {
                     b.Navigation("CampeonatoTimes");
 
+                    b.Navigation("Eventos");
+
+                    b.Navigation("GolsMarcados");
+
                     b.Navigation("Jogadores");
+
+                    b.Navigation("PartidasComoMandante");
+
+                    b.Navigation("PartidasComoVisitante");
 
                     b.Navigation("Titulos");
                 });

@@ -7,6 +7,10 @@
         public ICollection<Jogador> Jogadores { get; private set; } = new List<Jogador>();
         public ICollection<TimeTitulo> Titulos { get; private set; } = new List<TimeTitulo>();
         public ICollection<CampeonatoTime> CampeonatoTimes { get; private set; } = new List<CampeonatoTime>();
+        public ICollection<Partida> PartidasComoMandante { get; private set; } = new List<Partida>();
+        public ICollection<Partida> PartidasComoVisitante { get; private set; } = new List<Partida>();
+        public ICollection<RegistroDeGols> GolsMarcados { get; private set; } = new List<RegistroDeGols>();
+        public ICollection<EventoPartida> Eventos { get; private set; } =  new List<EventoPartida>();
         
         protected Time() { }
 

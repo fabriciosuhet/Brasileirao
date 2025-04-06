@@ -1,4 +1,6 @@
-﻿namespace Brasileirao.Domain.Entities
+﻿using System.Collections;
+
+namespace Brasileirao.Domain.Entities
 {
     public class Jogador : BaseEntity
     {
@@ -11,6 +13,8 @@
         public Guid TimeId { get; private set; }
 
         public ICollection<JogadorTitulo> Titulos { get; private set; } = new List<JogadorTitulo>();
+        public ICollection<RegistroDeGols> Gols { get; private set; } = new List<RegistroDeGols>();
+        public ICollection<EventoPartida> Eventos { get; private set; } = new List<EventoPartida>();
         
         protected Jogador() { }
 

@@ -17,3 +17,4 @@ D:\Projetos\Brasileirao\Brasileirao.Infrastructure\obj\Debug\net8.0\Brasileirao.
 D:\Projetos\Brasileirao\Brasileirao.Infrastructure\obj\Debug\net8.0\ref\Brasileirao.Infrastructure.dll
 D:\Projetos\Brasileirao\Brasileirao.Infrastructure\bin\Debug\net8.0\Brasileirao.Application.dll
 D:\Projetos\Brasileirao\Brasileirao.Infrastructure\bin\Debug\net8.0\Brasileirao.Application.pdb
+D:\Projetos\Brasileirao\Brasileirao.Infrastructure\obj\Debug\net8.0\Brasileirao.Infrastructure.sourcelink.json

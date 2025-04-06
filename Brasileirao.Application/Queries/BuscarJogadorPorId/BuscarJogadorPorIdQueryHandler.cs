@@ -22,8 +22,12 @@ public class BuscarJogadorPorIdQueryHandler : IRequestHandler<BuscarJogadorPorId
             .Select(jt => new TituloViewModel(jt.Titulo.Id, jt.Titulo.Nome))
             .ToList();
 
+        var registroDeGolsViewModel =
+            jogador.Gols.Select(rg => new RegistroDeGolsViewModel(rg.Jogador.Nome, rg.Time.Nome, rg.GolMinuto))
+                .ToList();
+        
         var jogadorDetalhesViewModel = new JogadorDetalhesViewModel(jogador.Id, jogador.Nome, jogador.Posicao,
-            jogador.NumeroCamisa, jogador.Time.Nome, titulosViewModel);
+            jogador.NumeroCamisa, jogador.Time.Nome, titulosViewModel, registroDeGolsViewModel);
 
         return jogadorDetalhesViewModel;
 
